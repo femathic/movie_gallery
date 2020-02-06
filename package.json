@@ -27,6 +27,7 @@
     "start": "npm run build:style && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "coveralls": "/node_modules/@testing-library/jest-dom/dist --coverage --coverageReporters=text-lcov | coveralls",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -46,6 +47,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.7.4",
+    "coveralls": "^3.0.9",
+    "jest": "^24.9.0",
     "postcss-cli": "^7.1.0",
     "tailwindcss": "^1.1.4"
   }
