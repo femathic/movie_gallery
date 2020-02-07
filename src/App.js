@@ -6,22 +6,9 @@ import HomePage from './components/homePage'
 import MoviePage from './components/moviePage'
 import Notfound from './components/notFound'
 import SearchPage from './containers/SearchPage';
-
 const store = configureStore();
 
-
-// const dispatch = new Promise((resolve, reject) => {
-//   store.dispatch({
-//     type: 'ADD_ERROR',
-//     error: 'No errors found.',
-//   });
-//   resolve(console.log("done"));
-// })
-
-// dispatch.then(() => console.log("Store", store.getState()));
-
-
-const App= ()=> (
+const App = () =>  (
   <Provider store={store}>
     <Router>
       <Switch>
