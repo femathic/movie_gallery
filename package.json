@@ -47,6 +47,7 @@
   "devDependencies": {
     "autoprefixer": "^9.7.4",
     "postcss-cli": "^7.1.0",
+    "redux-logger": "^3.0.6",
     "tailwindcss": "^1.1.4"
   }
 }

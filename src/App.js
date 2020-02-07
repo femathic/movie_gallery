@@ -1,43 +1,25 @@
 import React from 'react';
 import { Provider } from "react-redux";
 import { configureStore } from "./store";
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import HomePage from './components/homePage'
+import MoviePage from './components/moviePage'
+import Notfound from './components/notFound'
+import SearchPage from './containers/SearchPage';
 const store = configureStore();
 
+const App = () =>  (
+  <Provider store={store}>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/show/:id" component={MoviePage} />
+        <Route path="/shows" component={SearchPage} />
+        <Route component={Notfound} />
+      </Switch>
+    </Router>
+  </Provider>
+);
 
-// const dispatch = new Promise((resolve, reject) => {
-//   store.dispatch({
-//     type: 'ADD_ERROR',
-//     error: 'No errors found.',
-//   });
-//   resolve(console.log("done"));
-// })
-
-// dispatch.then(() => console.log("Store", store.getState()));
-
-
-function App() {
-  return (
-    <Provider store={store}>
-      <div className="App" >
-        <div className="w-full max-w-md bg-gray-800" >
-          <form action="" className=" bg-white shadow-md rounded px-8 py-8 pt-8">
-            <div className="px-4 pb-4">
-              <label htmlFor="email" className="text-sm block font-bold  pb-2">EMAIL ADDRESS</label>
-              <input type="email" name="email" id="email" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300 " placeholder="Johnbull@example.com" />
-            </div>
-            <div className="px-4 pb-4">
-              <label htmlFor="password" className="text-sm block font-bold pb-2">PASSWORD</label>
-              <input type="password" name="email" id="password" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300" placeholder="Enter your password" />
-            </div>
-            <div>
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">Sign In</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </Provider>
-  );
-}
 
 export default App;
