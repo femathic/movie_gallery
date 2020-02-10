@@ -8,6 +8,7 @@ import Notfound from './components/notFound'
 import SearchPage from './containers/searchPage';
 const store = configureStore();
 
+
 const App = () =>  (
   <Provider store={store}>
     <Router>
