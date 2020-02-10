@@ -2,10 +2,10 @@ import React from 'react';
 import { Provider } from "react-redux";
 import { configureStore } from "./store";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import HomePage from './components/homePage'
+import HomePage from './containers/homePage'
 import MoviePage from './components/moviePage'
 import Notfound from './components/notFound'
-import SearchPage from './containers/SearchPage';
+import SearchPage from './containers/searchPage';
 const store = configureStore();
 
 const App = () =>  (
