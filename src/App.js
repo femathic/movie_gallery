@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from './containers/homePage';
 import MoviePage from './components/moviePage';
 import Notfound from './components/notFound';
-import SearchPage from './containers/searchPage';
+
 const store = configureStore();
 
 
@@ -15,7 +15,7 @@ const App = () =>  (
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/show/:id" component={MoviePage} />
-        <Route path="/shows" component={SearchPage} />
+        {/* <Route path="/shows" component={SearchPage} /> */}
         <Route component={Notfound} />
       </Switch>
     </Router>
