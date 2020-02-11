@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const NotFound = () => (
-  <React.Fragment >
-  <h1> NotFound error 404 </h1>
+const UpcomingPage = () => (
+  <React.Fragment>
+    <h1>  Upcoming Page </h1>
     <NavLink to="/home" >Home</NavLink>
     <NavLink to="/trending" >Trending</NavLink>
     <NavLink to="/upcoming" >Upcoming</NavLink>
@@ -15,4 +15,4 @@ const NotFound = () => (
 );
 
 
-export default NotFound;
+export default UpcomingPage;

@@ -43,10 +43,10 @@ const IntroPage = ({setLoading, movies}) => {
   useEffect(() => {
     if (movies && movies.length > 0) {
       const intervalId = setInterval(() => {
-        if (loadingValue < 100) {
+        if (loadingValue < 90) {
           setLoadingValue(loadingValue + 0.4);
         } else {
-          setLoading("loaded")
+          setLoading("loaded");
         }
       }, 20)
       return () => clearInterval(intervalId);
@@ -54,7 +54,7 @@ const IntroPage = ({setLoading, movies}) => {
   }, [loadingValue, setLoading, movies])
   
   return (
-    <div className="flex justify-around items-stretch h-screen w-screen wow fadeIn" id="intro">
+    <div className="flex justify-around items-stretch h-screen w-screen wow fadeIn theme-background" id="intro">
 
       <div className="hidden md:flex flex-shrink-0 justify-center items-center wow slideInLeft" data-wow-duration="2s" data-wow-delay="1s">
         <img src={leftIcons} alt="website logo" style={{ width: "32px" }} />
