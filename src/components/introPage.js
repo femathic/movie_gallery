@@ -20,25 +20,6 @@ const chosenQuote = qoutes[Math.floor(Math.random() * Math.floor(qoutes.length))
 
 const IntroPage = ({setLoading, movies}) => {
   const [loadingValue, setLoadingValue] = useState(0);
-  
-  useEffect(() => {
-    const script = document.createElement("script");
-    const scriptText = document.createTextNode(`
-      $(document).ready(function () {
-        $("#intro").gradientify({
-          gradients: [
-            { start: [255, 106, 0], stop: [238, 9, 121] },
-            { start: [238, 9, 121], stop: [255, 106, 0] },
-            { start: [255, 106, 0], stop: [238, 9, 121] },
-            { start: [238, 9, 121], stop: [255, 106, 0] }
-          ],
-          transition_time: 8
-        });
-      });
-    `);
-    script.appendChild(scriptText);
-    document.body.appendChild(script);
-  }, [])
 
   useEffect(() => {
     if (movies && movies.length > 0) {
@@ -54,7 +35,7 @@ const IntroPage = ({setLoading, movies}) => {
   }, [loadingValue, setLoading, movies])
   
   return (
-    <div className="flex justify-around items-stretch h-screen w-screen wow fadeIn theme-background" id="intro">
+    <div className="flex justify-around items-stretch h-screen w-screen wow fadeIn theme-background gradientify">
 
       <div className="hidden md:flex flex-shrink-0 justify-center items-center wow slideInLeft" data-wow-duration="2s" data-wow-delay="1s">
         <img src={leftIcons} alt="website logo" style={{ width: "32px" }} />

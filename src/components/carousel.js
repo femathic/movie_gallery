@@ -1,4 +1,7 @@
 import React from 'react';
+import moment from 'moment';
+import numeral from 'numeral';
+import StarRatings from 'react-star-ratings';
 
 
 
@@ -18,8 +21,8 @@ const data = {
   weight: 88,
   externals: { tvrage: 25988, thetvdb: 264492, imdb: "tt1553656" },
   image: {
-      medium: "http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg",
-      original: "http://static.tvmaze.com/uploads/images/original_untouched/81/202627.jpg"
+    medium: "http://static.tvmaze.com/uploads/images/original_untouched/0/15.jpg",
+    original: "http://static.tvmaze.com/uploads/images/original_untouched/0/15.jpg"
   },
   summary: "<p><b>Under the Dome</b> is the story of a small town that is suddenly and inexplicably sealed off from the rest of the world by an enormous transparent dome. The town's inhabitants must deal with surviving the post-apocalyptic conditions while searching for answers about the dome, where it came from and if and when it will go away.</p>",
     updated: 1573667713
@@ -27,7 +30,58 @@ const data = {
 
 const Carousel = () => (
   <div className="relative bg-black mb-5" >
-    <img src={data.image.original} alt={data.name} className="w-full" style={{ objectFit: "cover", objectPosition: "100% 0", height: "28rem" }} />
+    <img src={data.image.original} alt={data.name} className="w-full" style={{ objectFit: "cover", objectPosition: "100% 20%", height: "30rem" }} />
+    <div className="absolute top-0 flex justify-between items-end text-white w-full h-full"
+      style={{ background: "rgba(0, 0, 0, 0.5)", height: "30rem" }}>
+      <div className="pl-1 md:pl-3 mb-6">
+        <h4 className="font-semibold text-md">Showing in cinemas</h4>
+        <hr className="theme-background gradientify border-0 h-1 w-20" />
+        <h1 className="font-extrabold whitespace-normal text-3xl mt-2 shadow-2xl">{data.name}</h1>
+        <div className="pb-5 font-semibold text-sm">
+          {data.genres.map((genre, id) => (
+            <span key={id} className="inline-block mr-3">#{genre}</span>
+          ))}
+          <b>| </b><span className="px-1">Premiere date:&nbsp; {moment(data.premiered).format('YYYY')}</span>
+          <b> | </b><span className="px-1">Duration:&nbsp; {data.runtime} mins</span>
+          <div className="block md:hidden pt-1">
+            Rating:&nbsp; {data.rating.average}
+            <span className="text-gray-400 pl-1">(based on {numeral(data.externals.thetvdb).format('0,a')} reviews)</span>
+            <span className="inline-block pl-2 card-star-rating">
+              <StarRatings
+                rating={data.rating.average / 10 * 6}
+                starRatedColor="orange"
+                numberOfStars={5}
+                name='rating'
+                clasname="font-sm"
+              />
+            </span>
+          </div>
+        </div>
+        <a href={data.officialSite} className="theme-background gradientify hover:shadow-lg whitespace-no-wrap font-medium text-sm py-2 px-4 my-2 w-36">
+          Visit Official Site
+        </a>
+        <a href={`/shows/${data.id}`} className="theme-border hover:shadow-lg whitespace-no-wrap font-medium text-sm py-1 px-4 m-2 w-36">
+          View Details
+        </a>
+      </div>
+      <div className="pb-3 hidden md:block">
+        <div className="theme-border hover:shadow-lg whitespace-no-wrap font-medium text-md py-1 px-4 m-2 w-36">
+          <p className="px-1">Rating &nbsp;
+            <small className="text-gray-400">based on <b>{numeral(data.externals.thetvdb).format('0,a')}</b> reviews</small>
+          </p>
+          <div className="flex justify-between carousel-star-rating">
+            <StarRatings
+              rating={data.rating.average / 10 * 6}
+              starRatedColor="orange"
+              numberOfStars={5}
+              name='rating'
+              clasname="font-sm"
+            />
+            <p className="theme-border px-1">{data.rating.average}</p>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
 );
 

@@ -3,10 +3,12 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Montserrat', Roboto, Helvetica, Arial, sans-serif;
-  font-weight: 300;
 }
 .theme-background {
   background: linear-gradient(90.6deg, #FF6A00 0.42%, #EE0979 99.69%);
+}
+.theme-border {
+  border: 2.5px solid #FB5C00;
 }
 .theme-text {
   color: #FB5C00;
@@ -19,6 +21,44 @@ body {
   border-bottom-width: 4px;
   border-color: #FB5C00;
 }
+.card-star-rating {
+  .star-ratings {
+    display: flex !important;
+
+    .star-container {
+        padding: 0 !important;
+        svg {
+            width: 15px !important;
+            height: 15px !important;
+        }
+    }
+  }
+}
+.carousel-star-rating {
+  .star-ratings {
+    display: flex !important;
+
+    .star-container {
+        padding: 0 !important;
+        svg {
+            width: 25px !important;
+            height: 20px !important;
+        }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .carousel-open:checked + .carousel-item {
   position: static;
   opacity: 100;

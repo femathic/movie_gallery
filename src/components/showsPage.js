@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const FilmsPage = () => (
+const ShowsPage = () => (
   <React.Fragment >
       <h1> MoviePage {} </h1>
       <NavLink to="/home" >Home</NavLink>
@@ -15,4 +15,4 @@ const FilmsPage = () => (
   );
 
 
-export default FilmsPage;
+export default ShowsPage;

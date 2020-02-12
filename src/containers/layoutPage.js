@@ -4,8 +4,7 @@ import { GetAllMovies } from '../store/actions/movies'
 import { useDispatch, useSelector } from 'react-redux';
 import IntroPage from '../components/introPage';
 import HomePage from '../components/homePage';
-import FilmsPage from '../components/filmsPage';
-import SeriesPage from '../components/seriesPage';
+import ShowsPage from '../components/showsPage';
 import TrendingPage from '../components/trendingPage';
 import UpcomingPage from '../components/upcomingPage';
 import SearchPage from '../components/searchPage';
@@ -34,13 +33,12 @@ const LayoutPage = () => {
           <div className="relative" >
             <SideBar />
             <NavBar location={location} />
-            <div className="relative ml-0 md:ml-48" >
+            <div className="relative ml-0 md:ml-64" >
               <BottomBar />
               <Switch>
                 <Route exact path='/' render={() => <Redirect to="/home" />}/>
                 <Route path='/home' render={(props) => <HomePage movies={movies} {...props} setLocation={setLocation} />}/>
-                <Route path='/films' render={() => <FilmsPage movies={movies} />}/>
-                <Route path='/series' render={() => <SeriesPage movies={movies} />}/>
+                <Route path='/shows' render={() => <ShowsPage movies={movies} />}/>
                 <Route path='/trending' render={() => <TrendingPage movies={movies} />}/>
                 <Route path='/upcoming' render={() => <UpcomingPage movies={movies} />}/>
                 <Route path='/search' render={() => <SearchPage movies={movies} />}/>
