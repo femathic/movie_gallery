@@ -12,7 +12,7 @@ const NavBar = (props) => {
     }
   }
   return (
-    <div className="flex flex-between text-white h-20 p-4 shadow-lg fixed top-0 z-40 ml-0 md:ml-64 w-full md:w-10/12"
+    <div className="flex flex-between text-white h-20 p-4 shadow-lg fixed top-0 z-40 ml-0 md:ml-64 w-full md:w-10/12 wow slideInLeft"
       style={{ background: "rgba(0, 0, 0, 0.4)"}}>
       <a className="theme-text pr-3 hover:opacity-75 hidden  my-auto md:block" href="#!" onClick={() => history.goBack()}>
         <i className="fas fa-chevron-left fa-2x"></i>

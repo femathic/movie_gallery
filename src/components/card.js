@@ -5,7 +5,8 @@ import moment from 'moment';
 
 const Card = ({movie}) => {
   return (
-    <div className="rounded bg-white overflow-hidden mx-1 my-5 shadow-lg" style={{maxWidth: "21rem"}}>
+    <div className="rounded bg-white overflow-hidden mx-1 my-5 shadow-lg wow slideTop"
+      data-wow-duration="2s" style={{ maxWidth: "21rem" }}>
       <Link to={`/show/${movie.id}`}>
         <img className="w-full" style={{ objectFit: "cover", objectPosition: "100% 0", height: "19rem" }}
           src={movie.image ? movie.image.original : "https://placeimg.com/640/480/any"} alt={movie.name} />

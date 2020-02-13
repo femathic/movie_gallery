@@ -23,7 +23,8 @@
     "react-scripts": "3.3.1",
     "react-star-ratings": "^2.3.0",
     "redux": "^4.0.4",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "siema": "^1.5.1"
   },
   "scripts": {
     "build:style": "postcss src/styles/index.css -o src/styles/tailwind.css",

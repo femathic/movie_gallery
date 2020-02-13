@@ -18,21 +18,21 @@ const qoutes = [
 ];
 const chosenQuote = qoutes[Math.floor(Math.random() * Math.floor(qoutes.length))];
 
-const IntroPage = ({setLoading, movies}) => {
+const IntroPage = ({ setLoading, movies, scheduledMovies}) => {
   const [loadingValue, setLoadingValue] = useState(0);
 
   useEffect(() => {
-    if (movies && movies.length > 0) {
+    if (movies && movies.length > 0 && scheduledMovies && scheduledMovies.length > 0) {
       const intervalId = setInterval(() => {
         if (loadingValue < 90) {
           setLoadingValue(loadingValue + 0.4);
         } else {
           setLoading("loaded");
         }
-      }, 20)
+      }, 5)
       return () => clearInterval(intervalId);
     }
-  }, [loadingValue, setLoading, movies])
+  }, [loadingValue, setLoading, movies, scheduledMovies])
   
   return (
     <div className="flex justify-around items-stretch h-screen w-screen wow fadeIn theme-background gradientify">

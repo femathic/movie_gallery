@@ -4,7 +4,7 @@ import Logo from "../images/moovis.svg";
 import IntroImage from "../images/introImage.png";
 
 const SideBar = () => (
-  <div className="fixed top-0 hidden md:block bg-white w-64 mr-8 h-screen z-40 shadow-2xl">
+  <div className="fixed top-0 hidden md:block bg-white w-64 mr-8 h-screen z-40 shadow-2xl wow slideInLeft">
     <div className="flex justify-center theme-background h-20 m-0 p-0 gradientify">
       <img className="h-8 w-14 pr-3 pl-8 my-auto" src={IntroImage} alt="moovis Logo" />
       <img className="w-20 mr-auto my-auto" src={Logo} alt="moovis Logo" />
