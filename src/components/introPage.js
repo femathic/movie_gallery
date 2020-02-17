@@ -29,7 +29,7 @@ const IntroPage = ({ setLoading, movies, scheduledMovies}) => {
         } else {
           setLoading("loaded");
         }
-      }, 5)
+      }, 4)
       return () => clearInterval(intervalId);
     }
   }, [loadingValue, setLoading, movies, scheduledMovies])
