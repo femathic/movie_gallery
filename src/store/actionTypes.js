@@ -1,3 +1,5 @@
 export const ADD_ERROR = "ADD_ERROR";
 export const REMOVE_ERROR = "REMOVE_ERROR";
 export const GET_ALL_MOVIES = 'GET_ALL_MOVIES';
+export const GET_SCHEDULED_MOVIES = 'GET_SCHEDULED_MOVIES';
+export const SEARCH_FOR_MOVIE = 'SEARCH_FOR_MOVIE';
