@@ -30,7 +30,7 @@ const App = () => {
   return(
   <Provider store={store}>
     <Router>
-      <LayoutPage />
+        <LayoutPage/>
     </Router>
   </Provider>
 )};

@@ -7,7 +7,7 @@ import errorReducer from './error';
 const rootReducer = combineReducers({
   movies: movieReducer,
   scheduledMovies: movieScheduledReducer,
-  searchedMovie: searchMovieReducer,
+  searchedMovies: searchMovieReducer,
   error: errorReducer,
 });
 
