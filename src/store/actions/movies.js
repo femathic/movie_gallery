@@ -70,7 +70,7 @@ export const GetScheduledMovies = async (dispatch) => {
 
 export const SearchForMovie = async (dispatch, searchQuery) => {
   try {
-    const response = await useFetch('get', `https://api.tvmaze.com/search/shows?q=${searchQuery}`);
+    const response = await useFetch('get',`https://api.tvmaze.com/search/shows?q=${searchQuery}`);
     if (response && response.data) {
       dispatch({
         type: SEARCH_FOR_MOVIE,

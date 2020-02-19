@@ -12,20 +12,16 @@ const BottomBar = () => (
         <i className="fas fa-home fa-lg"></i>
       </NavLink>
       <NavLink className="py-3 px-2 mx-2 hover:bg-gray-200"
-        to="/films" activeClassName="text-lg theme-text active-nav-sm shadow-md font-medium">
-        <i className="fas fa-tape fa-lg"></i>
+        to="/shows" activeClassName="text-lg theme-text active-nav-sm shadow-md font-medium">
+      <i className="fas fa-tv fa-lg"></i>
       </NavLink>
       <NavLink className="py-3 px-2 mx-2 hover:bg-gray-200"
-        to="/series" activeClassName="text-lg theme-text active-nav-sm shadow-md font-medium" >
-        <i className="fas fa-clone fa-lg"></i>
-      </NavLink>
-      <NavLink className="py-3 px-2 mx-2 hover:bg-gray-200"
-        to="/trending" activeClassName="text-lg theme-text active-nav-sm shadow-md font-medium">
+        to="/trending" activeClassName="text-lg theme-text active-nav-sm shadow-md font-medium" >
         <i className="fas fa-chart-line fa-lg"></i>
       </NavLink>
       <NavLink className="py-3 px-2 mx-2 hover:bg-gray-200"
         to="/upcoming" activeClassName="text-lg theme-text active-nav-sm shadow-md font-medium">
-        <i className="fas fa-history fa-lg"> </i>
+        <i className="fas fa-history fa-lg mr-8"> </i>
       </NavLink>
   </div>
 );
