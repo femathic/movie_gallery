@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { GetAllMovies, GetScheduledMovies} from '../store/actions/movies'
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import IntroPage from '../components/introPage';
 import HomePage from '../components/homePage';
 import ShowsPage from '../components/showsPage';
@@ -10,15 +11,17 @@ import UpcomingPage from '../components/upcomingPage';
 import SearchPage from '../components/searchPage';
 import SingleMoviePage from '../components/singleMoviePage';
 import NotFound from '../components/notFound';
+import Error from '../components/error';
 import SideBar from '../components/sideBar';
 import BottomBar from '../components/bottomBar';
 import NavBar from '../components/navBar';
 import Footer from "../components/footer";
 
 
-const LayoutPage = (props) => {
+const LayoutPage = () => {
   const dispatch = useDispatch();
-  const { movies, scheduledMovies} = useSelector(state => ({
+  let history = useHistory();
+  const { movies, scheduledMovies, error} = useSelector(state => ({
     movies: state.movies.data,
     scheduledMovies: state.scheduledMovies.data,
     error: state.error,
@@ -30,11 +33,15 @@ const LayoutPage = (props) => {
     dispatch(GetScheduledMovies);
     dispatch(GetAllMovies);
   }, [dispatch]);
+  useEffect(() => {
+    if(error.message !== null) history.push(`/error`) ;
+    console.log(error);
+  }, [error, history]);
 
   return (
     <div className="m-o p-0">
       {loading === "loading" ?
-        (<IntroPage setLoading={setLoading} movies={movies} scheduledMovies={scheduledMovies}/>):
+        (<IntroPage setLoading={setLoading} movies={movies} scheduledMovies={scheduledMovies} />) :
         (
           <div className="relative">
             <SideBar />
@@ -44,13 +51,13 @@ const LayoutPage = (props) => {
                 <Switch>
                   <Route exact path='/' render={() => <Redirect to="/home" />}/>
                   <Route path='/home' render={(props) => <HomePage movies={movies} {...props}
-                    scheduledMovies={scheduledMovies} setLocation={setLocation} />} />
-                  <Route path='/shows/:id' render={(props) => <SingleMoviePage {...props} movies={movies}
-                    scheduledMovies={scheduledMovies} />} />
-                  <Route path='/shows' render={() => <ShowsPage movies={movies} />}/>
+                  scheduledMovies={scheduledMovies} setLocation={setLocation} />} />
+                  <Route exact path='/shows/:id' render={(props) => <SingleMoviePage {...props} />} />
+                  <Route path='/shows' render={() => <ShowsPage movies={movies} />} />
                   <Route path='/trending' render={() => <TrendingPage movies={scheduledMovies} />}/>
                   <Route path='/upcoming' render={() => <UpcomingPage scheduledMovies={scheduledMovies} />}/>
-                <Route path='/search' render={(props) => <SearchPage {...props} setLocation={setLocation} />}/>
+                  <Route path='/search' render={(props) => <SearchPage {...props} setLocation={setLocation} />} />
+                  <Route path='/error' render={() => <Error error={error} />} />
                   <Route component={NotFound} />
                 </Switch>
                 <Footer />

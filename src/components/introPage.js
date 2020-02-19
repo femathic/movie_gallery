@@ -29,7 +29,8 @@ const IntroPage = ({ setLoading, movies, scheduledMovies}) => {
         } else {
           setLoading("loaded");
         }
-      }, 4)
+      }, 4
+      )
       return () => clearInterval(intervalId);
     }
   }, [loadingValue, setLoading, movies, scheduledMovies])
@@ -41,9 +42,9 @@ const IntroPage = ({ setLoading, movies, scheduledMovies}) => {
         <img src={leftIcons} alt="website logo" style={{ width: "32px" }} />
       </div>
 
-      <div className="flex flex-shrink-0 flex-col max-w-md justify-center mx-5">
-        <img src={Logo} alt="website logo" className="mb-5  mx-auto wow fadeInDown" data-wow-delay="1s"/>
-        <img src={IntroImage} alt="website logo" className="max-w-md mx-auto wow pulse" data-wow-duration="2s" data-wow-delay="2s"/>
+      <div className="flex flex-shrink-0 flex-col max-w-md justify-center mx-0 w-64 sm:w-full">
+        <img src={Logo} alt="website logo" className="mb-5  mx-auto wow fadeInDown w-full" data-wow-delay="1s"/>
+        <img src={IntroImage} alt="website logo" className="max-w-md mx-auto wow pulse w-full" data-wow-duration="2s" data-wow-delay="2s"/>
         <div className="shadow-md w-full bg-transparent mt-5 rounded-ful max-w-xs mx-auto wow fadeInLeft" data-wow-delay="1s" >
           <div className="bg-blue text-xs leading-none py-1 text-center text-white h-1 rounded-full"
             style={{ width: `${loadingValue}%`, backgroundColor: "white" }}></div>
