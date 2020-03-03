@@ -22,9 +22,9 @@ const SingleMoviePage = ({match}) => {
   }, [setMovie, match.params.id, movies, scheduledMovies, searchedMovies]); 
 
   return (
-    <div className="bg-gray-200">
+    <div className="pt-48 md:pt-24">
    { movie !== "" ? 
-    (<div className="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
+    (<div className="max-w-4xl flex items-center flex-wrap-reverse h-auto lg:h-screen flex-wrap mx-auto">
         <div className="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
           <div className="p-4 md:p-12 text-center lg:text-left">
             <h1 className="text-3xl font-bold pt-8 lg:pt-0">{movie.name}</h1>
@@ -48,7 +48,7 @@ const SingleMoviePage = ({match}) => {
           </div>
         </div>
         <div className="w-full lg:w-2/5">
-          <img src={movie.image.original} className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block" alt=""></img>
+          <img src={movie.image.original} className="rounded-none lg:rounded-lg mb-5 shadow-2xl" alt={movie.name}></img>
         </div>
       </div>) : (<h1>movie was not found</h1>)}
     </div>)

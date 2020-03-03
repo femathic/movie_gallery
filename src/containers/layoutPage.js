@@ -35,7 +35,6 @@ const LayoutPage = () => {
   }, [dispatch]);
   useEffect(() => {
     if(error.message !== null) history.push(`/error`) ;
-    console.log(error);
   }, [error, history]);
 
   return (
