@@ -4,7 +4,7 @@ import leftIcons from "../images/left-icons.svg";
 import rightIcons from "../images/right-icons.svg";
 import IntroImage from "../images/introImage.png";
 
-
+ 
 const qoutes = [
   { quote: "The past can hurt. But the way I see it, you can either run from it or learn from it", who: "Rafiki, The Lion King" },
   { quote: "I figure life’s a gift, and I don’t intend on wasting it", who: "Jack, Titanic" },

@@ -5,7 +5,7 @@ import moment from 'moment';
 
 export const GetAllMovies = async (dispatch) => {
   try {
-    const response = await useFetch('get', 'https://api.tvmaze.com/shows');
+    const response = await useFetch('get', 'https://api.tvmaze.com/shows?page=1');
     if (response && response.data) {
       dispatch({
         type: GET_ALL_MOVIES,
